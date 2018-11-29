@@ -5,18 +5,21 @@ class ossec::server {
 
       # Install the OSSEC HIDS Manager
       package { 'ossec-hids':
-        ensure => 'installed',
+        ensure  => 'installed',
+        require => Class['ossec::repo'],
       }
 
       # Install the OSSEC HIDS Server
       package { 'ossec-hids-server':
-        ensure => 'installed',
+        ensure  => 'installed',
+        require => Class['ossec::repo'],
       }
     }
     'Debian': {
       # Install the OSSEC HIDS Server/Manager
       package { 'ossec-hids':
-        ensure => 'installed',
+        ensure  => 'installed',
+        require => Class['ossec::repo'],
       }
     }
     default: {
