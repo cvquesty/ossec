@@ -1,17 +1,26 @@
 # OSSEC Server Installer
 class ossec::server {
+  case $facts['os']['family'] {
+    'RedHat': {
 
-  # Since the OSSEC repos are in place first, all platforms can call on
-  # Ossec via the package resource. In this way, no extra conditionals
-  # or case statements are necessary before asserting the server install
+      # Install the OSSEC HIDS Manager
+      package { 'ossec-hids':
+        ensure => 'installed',
+      }
 
-  # Install the main Package
-  package { 'ossec-hids':
-    ensure => 'installed',
-  }
-
-  # Install the Server Component
-  package { 'ossec-hids-server':
-    ensure => 'installed',
+      # Install the OSSEC HIDS Server
+      package { 'ossec-hids-server':
+        ensure => 'installed',
+      }
+    }
+    'Debian': {
+      # Install the OSSEC HIDS Server/Manager
+      package { 'ossec-hids':
+        ensure => 'installed',
+      }
+    }
+    default: {
+      notify ('Error. Your OS Major Release Version is Unsupported.')
+    }
   }
 }
