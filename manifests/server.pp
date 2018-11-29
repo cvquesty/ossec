@@ -20,7 +20,7 @@ class ossec::server {
       }
     }
     default: {
-      notify ('Error. Your OS Major Release Version is Unsupported.')
+      notify ('Error. Your OS is Unsupported.')
     }
   }
 }
