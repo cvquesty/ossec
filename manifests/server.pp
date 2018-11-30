@@ -19,7 +19,7 @@ class ossec::server {
       # Install the OSSEC HIDS Server/Manager
       package { 'ossec-hids':
         ensure  => 'installed',
-        require => Class['ossec::repo'],
+        require => File['/etc/apt/sources.list.d/atomic.list'],
       }
     }
     default: {

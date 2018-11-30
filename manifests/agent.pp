@@ -18,7 +18,8 @@ class ossec::agent {
     'Ubuntu': {
       # Install the OSSEC HIDS Agent
       package { 'ossec-hids-agent':
-        ensure => 'installed',
+        ensure  => 'installed',
+        require => File['/etc/apt/sources.list.d/atomic.list'],
       }
     }
 
