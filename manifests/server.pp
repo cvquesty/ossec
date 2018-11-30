@@ -17,7 +17,7 @@ class ossec::server {
     }
     'Debian': {
       # Install the OSSEC HIDS Server/Manager
-      package { 'ossec-hids':
+      package { 'ossec-hids-server':
         ensure  => 'installed',
         require => File['/etc/apt/sources.list.d/atomic.list'],
       }
