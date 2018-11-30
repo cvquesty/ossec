@@ -26,11 +26,11 @@ class ossec::repo {
 
         '7': {
           # Install Repo
-          package { 'repofile':
-            ensure   => 'present',
-            provider => 'rpm',
-            source   => 'https://updates.atomicorp.com/channels/atomic/centos/7/x86_64/RPMS/atomic-release-1.0-21.el7.art.noarch.rpm',
-            require  => Exec['import_key'],
+          exec { 'install_rhel7_repo':
+            path    => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
+            command => 'rpm -i https://updates.atomicorp.com/channels/atomic/centos/7/x86_64/RPMS/atomic-release-1.0-21.el7.art.noarch.rpm',
+            unless  => 'test -f /etc/yum.repos.d/atomic.repo',
+            require => Exec['import_key']
           }
         }
         default: {
