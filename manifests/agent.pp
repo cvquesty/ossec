@@ -16,11 +16,6 @@ class ossec::agent {
     }
 
     'Ubuntu': {
-      # Install the OSSEC HIDS Server/Manager
-      package { 'ossec-hids':
-        ensure => 'installed',
-      }
-
       # Install the OSSEC HIDS Agent
       package { 'ossec-hids-agent':
         ensure => 'installed',
