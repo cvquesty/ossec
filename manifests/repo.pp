@@ -33,7 +33,7 @@ class ossec::repo {
           }
         }
         default: {
-          notify ('Error. Your OS Major Release Version is Unsupported.')
+          notice ('Error. Your OS Major Release Version is Unsupported.')
         }
       }
     }
@@ -85,7 +85,7 @@ class ossec::repo {
           }
         }
         default: {
-          notify ('Error. Your OS Major Release Version is Unsupported.')
+          notice ('Error. Your OS Major Release Version is Unsupported.')
         }
       }
 
@@ -97,7 +97,7 @@ class ossec::repo {
 
     }
     default: {
-      notify ('Error. Your Operating System is Unsupported.')
+      notice ('Error. Your Operating System is Unsupported.')
     }
   }
 }

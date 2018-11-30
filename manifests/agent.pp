@@ -28,7 +28,7 @@ class ossec::agent {
     }
 
     default: {
-      notify ('Your Operating System is Unsupported.')
+      notice ('Your Operating System is Unsupported.')
     }
   }
 }

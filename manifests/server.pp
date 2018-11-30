@@ -23,7 +23,7 @@ class ossec::server {
       }
     }
     default: {
-      notify ('Error. Your OS is Unsupported.')
+      notice ('Error. Your OS is Unsupported.')
     }
   }
 }
