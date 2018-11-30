@@ -12,6 +12,16 @@ class ossec::repo {
         unless  => 'gpg --list-keys | grep uid | awk {\'print $5\'} | tr -d \'<>\' | grep "scott@atomicorp.com"',
       }
 
+      ############################################################################################
+      # For RedHat, the ossec-hids package is needed regardless of whether you are using -server #
+      # or -agent. As such, I can't put the ossec-hids into both or Puppet will barf.  Instead,  #
+      # I will place it here with the understanding that it is required /regardless/. "Repo"     #
+      # isn't my preferred place for it, and it may move in the future.                          #
+      ############################################################################################
+      package { 'ossec-hids':
+        ensure => 'present',
+      }
+
       # Determine the Major Release Version and act accordingly
       case $facts['os']['release']['major'] {
         '6': {

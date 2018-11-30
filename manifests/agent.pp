@@ -4,12 +4,7 @@ class ossec::agent {
   # Choose packages based on OS
   case $facts['os']['family'] {
     'RedHat': {
-      # Install the main Package
-      package { 'ossec-hids':
-        ensure => 'installed',
-      }
-
-      # Install the Server Component
+      # Install the OSSEC HIDS Agent
       package { 'ossec-hids-client':
         ensure => 'installed',
       }
