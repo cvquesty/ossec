@@ -16,10 +16,11 @@ class ossec::repo {
       case $facts['os']['release']['major'] {
         '6': {
           # Install Repo
-          package { 'repofile':
+          package { 'atomic-release':
+          #package { 'repofile':
             ensure   => 'present',
-            provider => 'rpm',
-            source   => 'https://updates.atomicorp.com/channels/atomic/centos/6/i386/RPMS/atomic-release-1.0-21.el6.art.noarch.rpm',
+            #provider => 'rpm',
+            #source   => 'https://updates.atomicorp.com/channels/atomic/centos/6/i386/RPMS/atomic-release-1.0-21.el6.art.noarch.rpm',
             require  => Exec['import_key'],
           }
         }
