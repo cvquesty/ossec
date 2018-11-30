@@ -21,7 +21,6 @@ class ossec::repo {
             provider => 'rpm',
             source   => 'https://updates.atomicorp.com/channels/atomic/centos/6/i386/RPMS/atomic-release-1.0-21.el6.art.noarch.rpm',
             require  => Exec['import_key'],
-            unless   => 'test -f /etc/yum.repos.d/atomic.repo',
           }
         }
 
@@ -32,7 +31,6 @@ class ossec::repo {
             provider => 'rpm',
             source   => 'https://updates.atomicorp.com/channels/atomic/centos/7/x86_64/RPMS/atomic-release-1.0-21.el7.art.noarch.rpm',
             require  => Exec['import_key'],
-            unless   => 'test -f /etc/yum.repos.d/atomic.repo',
           }
         }
         default: {
@@ -62,7 +60,6 @@ class ossec::repo {
             content => 'deb https://updates.atomicorp.com/channels/atomic/ubuntu trusty main',
             notify  => Exec['update_repos'],
             require => Exec['import_key'],
-            unless  => 'test -f /etc/apt/sources.list/atomic./list',
           }
         }
         '16.04': {
@@ -75,7 +72,6 @@ class ossec::repo {
             content => 'deb https://updates.atomicorp.com/channels/atomic/ubuntu xenial main',
             notify  => Exec['update_repos'],
             require => Exec['import_key'],
-            unless  => 'test -f /etc/apt/sources.list/atomic./list',
           }
         }
         '18.04': {
@@ -88,7 +84,6 @@ class ossec::repo {
             content => 'deb https://updates.atomicorp.com/channels/atomic/ubuntu bionic main',
             notify  => Exec['update_repos'],
             require => Exec['import_key'],
-            unless  => 'test -f /etc/apt/sources.list/atomic./list',
           }
         }
         default: {
