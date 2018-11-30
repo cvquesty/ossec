@@ -48,7 +48,7 @@ class ossec::repo {
 
       # Determine the Major Release Version and act accordingly
       case $facts['os']['release']['major'] {
-        '14': {
+        '14.04': {
           # Add APT Source to configuration
           file { '/etc/apt/sources.list.d/atomic.list':
             ensure  => 'present',
@@ -60,7 +60,7 @@ class ossec::repo {
             require => Exec['import_key'],
           }
         }
-        '16': {
+        '16.04': {
           # Add APT Source to configuration
           file { '/etc/apt/sources.list.d/atomic.list':
             ensure  => 'present',
@@ -72,7 +72,7 @@ class ossec::repo {
             require => Exec['import_key'],
           }
         }
-        '18': {
+        '18.04': {
           # Add APT Source to configuration
           file { '/etc/apt/sources.list.d/atomic.list':
             ensure  => 'present',
