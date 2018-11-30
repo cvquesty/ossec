@@ -2,7 +2,7 @@
 class ossec::agent {
 
   # Choose packages based on OS
-  case $facts['os']['name'] {
+  case $facts['os']['family'] {
     'RedHat': {
       # Install the main Package
       package { 'ossec-hids':
@@ -15,7 +15,7 @@ class ossec::agent {
       }
     }
 
-    'Ubuntu': {
+    'Debian': {
       # Install the OSSEC HIDS Agent
       package { 'ossec-hids-agent':
         ensure  => 'installed',
