@@ -9,6 +9,7 @@ class ossec::repo {
       exec { 'import_key':
         path    => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
         command => 'curl -sSL https://ossec.github.io/files/OSSEC-ARCHIVE-KEY.asc | gpg --import -',
+        unless  => 'gpg --list-keys | grep uid | awk {\'print $5\'} | tr -d \'<>\' | grep "scott@atomicorp.com"',
       }
 
       # Determine the Major Release Version and act accordingly
@@ -44,6 +45,7 @@ class ossec::repo {
       exec { 'import_key':
         path    => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
         command => 'wget -q -O - https://www.atomicorp.com/RPM-GPG-KEY.atomicorp.txt  | sudo apt-key add -',
+        unless  => 'gpg --list-keys | grep uid | awk {\'print $5\'} | tr -d \'<>\' | grep "scott@atomicorp.com"',
       }
 
       # Determine the Major Release Version and act accordingly
