@@ -5,7 +5,7 @@ class ossec::agent {
   case $facts['os']['family'] {
     'RedHat': {
       # Install the OSSEC HIDS Agent
-      package { 'ossec-hids-client':
+      package { 'ossec-hids-agent':
         ensure => 'installed',
       }
     }
