@@ -4,10 +4,10 @@
 Welcome to the official Puppet module for the OSSEC-HIDS project. This module is intended to be used to install and configure
 OSSEC-HIDS as either a server or agent, and in the initial version, supports:
 
-RedHat/CentOS 6
-RedHat/CentOS 7
-Ubuntu Trusty
-Ubuntu Xenial
+RedHat/CentOS 6<br>
+RedHat/CentOS 7<br>
+Ubuntu Trusty<br>
+Ubuntu Xenial<br>
 
 #### Table of Contents
 
