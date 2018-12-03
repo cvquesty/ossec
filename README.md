@@ -1,15 +1,13 @@
 
 # ossec
 
-Welcome to your new module. A short overview of the generated parts can be found in the PDK documentation at https://puppet.com/pdk/latest/pdk_generating_modules.html .
+Welcome to the official Puppet module for the OSSEC-HIDS project. This module is intended to be used to install and configure
+OSSEC-HIDS as either a server or agent, and in the initial version, supports:
 
-The README template below provides a starting point with details about what information to include in your README.
-
-
-
-
-
-
+RedHat/CentOS 6
+RedHat/CentOS 7
+Ubuntu Trusty
+Ubuntu Xenial
 
 #### Table of Contents
 
