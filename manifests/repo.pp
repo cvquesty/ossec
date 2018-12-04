@@ -6,6 +6,8 @@ class ossec::repo {
     'RedHat': {
 
       # Import OSSEC key
+      # The key on RedHat is a GPG key. Check for Scott Shin's personal key. If exists, do nothing,
+      # if not present, install the key.
       exec { 'import_key':
         path    => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
         command => 'curl -sSL https://ossec.github.io/files/OSSEC-ARCHIVE-KEY.asc | gpg --import -',
