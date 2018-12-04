@@ -109,7 +109,7 @@ class ossec::repo {
 
     }
     default: {
-      notice ('Error. Your Operating System is Unsupported.')
+      notice ('Error. Your OS Family is Unsupported.')
     }
   }
 }
