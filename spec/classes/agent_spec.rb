@@ -21,7 +21,6 @@ describe 'ossec::agent' do
         ensure: 'installed',
       )
     end
-    end
   end # End of RedHat Context
 
   context 'Debian' do
@@ -34,9 +33,9 @@ describe 'ossec::agent' do
     end
 
     # Add in ossec::repo to get the file resource we're testing for on the require
-    let (:pre_condition) { include ossec::repo }
+    let (:pre_condition) { 'include ossec::repo' }
 
-    context "ossec::agent class without any parameters" do
+    context 'ossec::agent class without any parameters' do
       it { is_expected.to compile.with_all_deps }
       it do
         is_expected.to contain_class('ossec::agent')
@@ -45,7 +44,7 @@ describe 'ossec::agent' do
 
     it do
       is_expected.to contain_package('ossec-hids-agent').with(
-        :ensure  => 'installed',
+        ensure: 'installed',
       ).that_requires('File[/etc/apt/sources.list.d/atomic.list]')
     end
   end # End of Debian Context
