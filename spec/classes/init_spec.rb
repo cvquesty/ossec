@@ -1,56 +1,46 @@
 require 'spec_helper'
 describe 'ossec' do
-
   context 'RedHat6' do
     let :facts do
       {
-        :concat_basedir => '/foo',
-        :os             => { :family => 'RedHat', :release => { :major => '6' } },
+        concat_basedir: '/foo',
+        os:             { family: 'RedHat', release: { major: '6' } },
       }
     end
 
     let :params do
       {
-        :nodetype => 'agent',
+        nodetype: 'agent',
       }
     end
 
-    context "ossec Class with agent parameter" do
+    context 'ossec Class with agent parameter' do
       it { is_expected.to compile.with_all_deps }
       it do
         is_expected.to contain_class('ossec::repo')
         is_expected.to contain_class('ossec::agent')
-      end
-
-      it do
-        should compile
       end
     end # End of ossec class context
   end  # End of RedHat 6 context
-
   context 'RedHat7' do
     let :facts do
       {
-        :concat_basedir => '/foo',
-        :os             => { :family => 'RedHat', :release => { :major => '7' } },
+        concat_basedir: '/foo',
+        os:             { family: 'RedHat', release: { major: '7' } },
       }
     end
 
     let :params do
       {
-        :nodetype => 'agent',
+        nodetype: 'agent',
       }
     end
 
-    context "ossec Class with agent parameter" do
+    context 'ossec Class with agent parameter' do
       it { is_expected.to compile.with_all_deps }
       it do
         is_expected.to contain_class('ossec::repo')
         is_expected.to contain_class('ossec::agent')
-      end
-
-      it do
-        should compile
       end
     end # End of ossec class context
   end # End of RedHat 7 context
