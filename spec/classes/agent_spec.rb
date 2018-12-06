@@ -6,7 +6,7 @@ describe 'ossec::agent' do
     let :facts do
       {
         :concat_basedir => '/foo',
-        :os             => { :family => 'RedHat' },
+        :os             => { :family => 'RedHat', :release => { :major => '6' } },
       }
     end
 
@@ -33,7 +33,7 @@ describe 'ossec::agent' do
     let :facts do
       {
         :concat_basedir => '/foo',
-        :os             => { :family => 'Debian' },
+        :os             => { :family => 'Debian', :release => { :major => '14.04' } },
       }
     end
 
