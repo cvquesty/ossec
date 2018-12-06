@@ -33,7 +33,7 @@ describe 'ossec::agent' do
     end
 
     # Add in ossec::repo to get the file resource we're testing for on the require
-    let (:pre_condition) { 'include ossec::repo' }
+    let(:pre_condition) { 'include ossec::repo' }
 
     context 'ossec::agent class without any parameters' do
       it { is_expected.to compile.with_all_deps }
