@@ -15,11 +15,11 @@ describe 'ossec' do
       }
     end
 
-    context "ossec Class without any parameters" do
+    context "ossec Class with agent parameter" do
       it { is_expected.to compile.with_all_deps }
       it do
-        is_expected.to contain_class('ossec')
         is_expected.to contain_class('ossec::repo')
+        is_expected.to contain_class('ossec::agent')
       end
 
       it do
@@ -42,11 +42,11 @@ describe 'ossec' do
       }
     end
 
-    context "ossec Class without any parameters" do
+    context "ossec Class with agent parameter" do
       it { is_expected.to compile.with_all_deps }
       it do
-        is_expected.to contain_class('ossec')
         is_expected.to contain_class('ossec::repo')
+        is_expected.to contain_class('ossec::agent')
       end
 
       it do
@@ -69,11 +69,11 @@ describe 'ossec' do
       }
     end
 
-    context "ossec Class without any parameters" do
+    context "ossec Class with agent parameter" do
       it { is_expected.to compile.with_all_deps }
       it do
-        is_expected.to contain_class('ossec')
         is_expected.to contain_class('ossec::repo')
+        is_expected.to contain_class('ossec::agent')
       end
 
       it do
@@ -96,11 +96,11 @@ describe 'ossec' do
       }
     end
 
-    context "ossec Class without any parameters" do
+    context "ossec Class with agent parameter" do
       it { is_expected.to compile.with_all_deps }
       it do
-        is_expected.to contain_class('ossec')
         is_expected.to contain_class('ossec::repo')
+        is_expected.to contain_class('ossec::agent')
       end
 
       it do
@@ -123,11 +123,11 @@ describe 'ossec' do
       }
     end
 
-    context "ossec Classs without any parameters" do
+    context "ossec Classs with agent parameter" do
       it { is_expected.to compile.with_all_deps }
       it do
-        is_expected.to contain_class('ossec')
         is_expected.to contain_class('ossec::repo')
+        is_expected.to contain_class('ossec::agent')
       end
     end # End of ossec class context
   end # End Ubuntu 18.04 Context

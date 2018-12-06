@@ -37,6 +37,9 @@ describe 'ossec::agent' do
       }
     end
 
+    # Add in ossec::repo to get the file resource we're testing for on the require
+    let (:precondition) { 'include ossec::repo' }
+
     context "ossec::agent class without any parameters" do
       it { is_expected.to compile.with_all_deps }
       it do
@@ -46,7 +49,7 @@ describe 'ossec::agent' do
 
     it do
       is_expected.to contain_package('ossec-hids-agent').with(
-        :ensure => 'installed',
+        :ensure  => 'installed',
       ).that_requires('File[/etc/apt/sources.list.d/atomic.list]')
     end
 
