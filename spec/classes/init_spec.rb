@@ -9,6 +9,12 @@ describe 'ossec' do
       }
     end
 
+    let :params do
+      {
+        :nodetype => 'agent',
+      }
+    end
+
     context "ossec Class without any parameters" do
       it { is_expected.to compile.with_all_deps }
       it do
@@ -27,6 +33,12 @@ describe 'ossec' do
       {
         :concat_basedir => '/foo',
         :os             => { :family => 'RedHat', :release => { :major => '7' } },
+      }
+    end
+
+    let :params do
+      {
+        :nodetype => 'agent',
       }
     end
 
@@ -51,6 +63,12 @@ describe 'ossec' do
       }
     end
 
+    let :params do
+      {
+        :nodetype => 'agent',
+      }
+    end
+
     context "ossec Class without any parameters" do
       it { is_expected.to compile.with_all_deps }
       it do
@@ -72,6 +90,12 @@ describe 'ossec' do
       }
     end
 
+    let :params do
+      {
+        :nodetype => 'agent',
+      }
+    end
+
     context "ossec Class without any parameters" do
       it { is_expected.to compile.with_all_deps }
       it do
@@ -90,6 +114,12 @@ describe 'ossec' do
       {
         :concat_bassedir => '/foo',
         :os              => { :family => 'Debian', :release => { :major => '18' } },
+      }
+    end
+
+    let :params do
+      {
+        :nodetype => 'agent',
       }
     end
 
