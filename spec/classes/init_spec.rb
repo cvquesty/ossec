@@ -55,43 +55,38 @@ describe 'ossec' do
 
     let :params do
       {
-        :nodetype => 'agent',
+        nodetype: 'agent',
       }
     end
 
-    context "ossec Class with agent parameter" do
+    context 'ossec Class with agent parameter' do
       it { is_expected.to compile.with_all_deps }
       it do
         is_expected.to contain_class('ossec::repo')
         is_expected.to contain_class('ossec::agent')
       end
-
     end # End of ossec class context
   end # End Ubuntu14.04 Context
 
   context 'Ubuntu16.04' do
     let :facts do
       {
-        :concat_basedir => '/foo',
-        :os             => { :family => 'Debian', :release => { :major => '16' } },
+        concat_basedir: '/foo',
+        os:             { family: 'Debian', release: { major: '16' } },
       }
     end
 
     let :params do
       {
-        :nodetype => 'agent',
+        nodetype: 'agent',
       }
     end
 
-    context "ossec Class with agent parameter" do
+    context 'ossec Class with agent parameter' do
       it { is_expected.to compile.with_all_deps }
       it do
         is_expected.to contain_class('ossec::repo')
         is_expected.to contain_class('ossec::agent')
-      end
-
-      it do
-        should compile
       end
     end # End of ossec class context
   end # End Ubuntu 16.04 Context
@@ -99,18 +94,18 @@ describe 'ossec' do
   context 'Ubuntu 18.04' do
     let :facts do
       {
-        :concat_bassedir => '/foo',
-        :os              => { :family => 'Debian', :release => { :major => '18' } },
+        concat_bassedir: '/foo',
+        os:              { family: 'Debian', release: { major: '18' } },
       }
     end
 
     let :params do
       {
-        :nodetype => 'agent',
+        nodetype: 'agent',
       }
     end
 
-    context "ossec Classs with agent parameter" do
+    context 'ossec Classs with agent parameter' do
       it { is_expected.to compile.with_all_deps }
       it do
         is_expected.to contain_class('ossec::repo')
