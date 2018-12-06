@@ -21,7 +21,7 @@ describe 'ossec' do
         is_expected.to contain_class('ossec::agent')
       end
     end # End of ossec class context
-  end  # End of RedHat 6 context
+  end # End of RedHat 6 context
   context 'RedHat7' do
     let :facts do
       {
@@ -48,8 +48,8 @@ describe 'ossec' do
   context 'Ubuntu14.04' do
     let :facts do
       {
-        :concat_basedir => '/foo',
-        :os             => { :family => 'Debian', :release => { :major => '14' } },
+        concat_basedir: '/foo',
+        os:             { family: 'Debian', release: { major: '14' } },
       }
     end
 
@@ -66,9 +66,6 @@ describe 'ossec' do
         is_expected.to contain_class('ossec::agent')
       end
 
-      it do
-        should compile
-      end
     end # End of ossec class context
   end # End Ubuntu14.04 Context
 
