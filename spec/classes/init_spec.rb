@@ -1,5 +1,9 @@
 require 'spec_helper'
 describe 'ossec' do
+
+  # Add in ossec::repo to get the file resource we're testing for on the require
+  let(:pre_condition) { 'include ossec::repo' }
+
   context 'RedHat6' do
     let :facts do
       {
@@ -49,7 +53,7 @@ describe 'ossec' do
     let :facts do
       {
         concat_basedir: '/foo',
-        os:             { family: 'Debian', release: { major: '14' } },
+        os:             { family: 'Debian', release: { major: '14.04' } },
       }
     end
 
@@ -58,6 +62,9 @@ describe 'ossec' do
         nodetype: 'agent',
       }
     end
+
+    # Add in ossec::repo to get the file resource we're testing for on the require
+    let(:pre_condition) { 'include ossec::repo' }
 
     context 'ossec Class with agent parameter' do
       it { is_expected.to compile.with_all_deps }
@@ -72,7 +79,7 @@ describe 'ossec' do
     let :facts do
       {
         concat_basedir: '/foo',
-        os:             { family: 'Debian', release: { major: '16' } },
+        os:             { family: 'Debian', release: { major: '16.04' } },
       }
     end
 
@@ -81,6 +88,9 @@ describe 'ossec' do
         nodetype: 'agent',
       }
     end
+
+    # Add in ossec::repo to get the file resource we're testing for on the require
+    let(:pre_condition) { 'include ossec::repo' }
 
     context 'ossec Class with agent parameter' do
       it { is_expected.to compile.with_all_deps }
@@ -95,7 +105,7 @@ describe 'ossec' do
     let :facts do
       {
         concat_bassedir: '/foo',
-        os:              { family: 'Debian', release: { major: '18' } },
+        os:              { family: 'Debian', release: { major: '18.04' } },
       }
     end
 

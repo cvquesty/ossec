@@ -1,5 +1,9 @@
 require 'spec_helper'
 describe 'ossec::agent' do
+
+  # Add in ossec::repo to get the file resource we're testing for on the require
+  let(:pre_condition) { 'include ossec::repo' }
+
   context 'RedHat' do
     # Set facts for RedHat Family Test
     let :facts do
@@ -31,9 +35,6 @@ describe 'ossec::agent' do
         os:              { family: 'Debian', release: { major: '14.04' } },
       }
     end
-
-    # Add in ossec::repo to get the file resource we're testing for on the require
-    let(:pre_condition) { 'include ossec::repo' }
 
     context 'ossec::agent class without any parameters' do
       it { is_expected.to compile.with_all_deps }
