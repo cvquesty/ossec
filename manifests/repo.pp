@@ -106,7 +106,7 @@ class ossec::repo {
         # Refresh the Ubuntu APT Repos
         exec { 'update_repos':
           path    => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
-          command => 'apt-get update'
+          command => 'apt-get update',
         }
 
     }
