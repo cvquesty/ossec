@@ -7,11 +7,13 @@ class ossec (
 
     include ossec::repo
     include ossec::server
+    include ossec::config::server
 
   } elsif $nodetype == 'agent' {
 
     include ossec::repo
     include ossec::agent
+    include ossec::config::agent
 
   } else {
     notice('The parameter you specified is unrecognozed by the ossec module.')
