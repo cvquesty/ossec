@@ -9,5 +9,13 @@ class ossec::config::server {
   }
 
 
+  # Place Main ossec.conf on disk
+  file { '/var/ossec/etc/ossec-server.conf':
+    ensure  => 'present',
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    content => template('ossec/server_config.erb'),
+  }
 
 }
