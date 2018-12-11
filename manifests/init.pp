@@ -11,13 +11,23 @@ class ossec (
 
     include ossec::repo
     include ossec::server
-    include ossec::config::server
+    class { 'ossec::config::server':
+      notify_by_email    => $notify_by_email,
+      notification_email => $notification_email,
+      smtp_server        => $smtp_server,
+      email_from_address => $email_from_address,
+    }
 
   } elsif $nodetype == 'agent' {
 
     include ossec::repo
     include ossec::agent
-    include ossec::config::agent
+    class { 'ossec::config::server':
+      notify_by_email    => $notify_by_email,
+      notification_email => $notification_email,
+      smtp_server        => $smtp_server,
+      email_from_address => $email_from_address,
+    }
 
   } else {
     notice('The parameter you specified is unrecognozed by the ossec module.')
