@@ -22,7 +22,7 @@ class ossec (
 
     include ossec::repo
     include ossec::agent
-    class { 'ossec::config::server':
+    class { 'ossec::config::agent':
       notify_by_email    => $notify_by_email,
       notification_email => $notification_email,
       smtp_server        => $smtp_server,
