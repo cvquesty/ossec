@@ -14,7 +14,11 @@ describe 'ossec' do
 
     let :params do
       {
-        nodetype: 'agent',
+        nodetype:           'agent',
+        notify_by_email:    'yes',
+        notification_email: 'test@user.com',
+        smtp_server:         'localhost',
+        email_from_address:  'ossec_admin@domain.com',
       }
     end
 
@@ -36,7 +40,11 @@ describe 'ossec' do
 
     let :params do
       {
-        nodetype: 'agent',
+        nodetype:           'agent',
+        notify_by_email:    'yes',
+        notification_email: 'test@user.com',
+        smtp_server:         'localhost',
+        email_from_address:  'ossec_admin@domain.com',
       }
     end
 
@@ -59,7 +67,11 @@ describe 'ossec' do
 
     let :params do
       {
-        nodetype: 'agent',
+        nodetype:           'agent',
+        notify_by_email:    'yes',
+        notification_email: 'test@user.com',
+        smtp_server:         'localhost',
+        email_from_address:  'ossec_admin@domain.com',
       }
     end
 
@@ -85,7 +97,11 @@ describe 'ossec' do
 
     let :params do
       {
-        nodetype: 'agent',
+        nodetype:           'agent',
+        notify_by_email:    'yes',
+        notification_email: 'test@user.com',
+        smtp_server:         'localhost',
+        email_from_address:  'ossec_admin@domain.com',
       }
     end
 
@@ -111,7 +127,11 @@ describe 'ossec' do
 
     let :params do
       {
-        nodetype: 'agent',
+        nodetype:           'agent',
+        notify_by_email:    'yes',
+        notification_email: 'test@user.com',
+        smtp_server:         'localhost',
+        email_from_address:  'ossec_admin@domain.com',
       }
     end
 

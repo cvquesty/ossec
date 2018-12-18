@@ -4,3 +4,13 @@
     <smtp_server><%= @smtp_server %></smtp_server>
     <email_from><%= @email_from_address %></email_from>
 </global>
+
+<rules>
+  <decoder_dir pattern=".xml$">etc/decoders.d</decoder_dir>
+  <rule_dir pattern=".xml$">etc/rules.d</rule_dir>
+</rules>
+
+<syscheck>
+  <!-- Frequency that syscheck is executed - default to every 22 hours -->
+  <frequency>79200</frequency>
+</syscheck>
